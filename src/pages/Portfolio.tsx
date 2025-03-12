@@ -21,6 +21,33 @@ const Portfolio = () => {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [elevatorPosition, setElevatorPosition] = useState<number>(0);
   const { toast } = useToast();
+  const skills = [
+    {
+      category: "Product Management Skills",
+      icon: <Layers className="w-6 h-6 text-blue-500" />,
+      list: [
+        "Product Strategy & Vision",
+        "Market Research & Competitor Analysis",
+        "Product Documentation",
+        "Roadmapping",
+        "Agile & Scrum Methodologies",
+        "Requirements Gathering & User Stories",
+        "Sprint Planning",
+        "Cross-functional Collaboration",
+        "Wireframing & Prototyping (Figma)",
+        "A/B Testing",
+      ],
+    },
+    {
+      category: "Technical Skills",
+      icon: <Code className="w-6 h-6 text-green-500" />,
+      list: [
+        "Data Visualization (Tableau)",
+        "Web Application Development (HTML, CSS, JavaScript, ReactJS, Node.js, Express.js, Figma)",
+        "ServiceNow (System Administration, IT Service Management, Customer Service Management, Scripting, Workflow, Scheduled Jobs, Common Services for ServiceNow Application Development)",
+      ],
+    },
+  ];
   
   const sectionRefs = {
     about: useRef<HTMLDivElement>(null),
@@ -481,6 +508,35 @@ const Portfolio = () => {
             </ScrollReveal>
           </div>
         </section>
+        <div className="max-w-4xl mx-auto p-6">
+      <h2 className="text-3xl font-bold text-center mb-6">Skills</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skills.map((skill, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            className="p-4 rounded-lg shadow-lg bg-white"
+          >
+            <Card>
+              <CardContent className="flex flex-col space-y-4 p-4">
+                <div className="flex items-center space-x-3">
+                  {skill.icon}
+                  <h3 className="text-xl font-semibold">{skill.category}</h3>
+                </div>
+                <ul className="space-y-2">
+                  {skill.list.map((item, idx) => (
+                    <li key={idx} className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-gray-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </div>
       </main>
     </div>
   );
