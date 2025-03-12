@@ -1,13 +1,12 @@
 
 import React, { useEffect, useState } from "react";
-import { FloatingElement } from "../animations/FloatingElement";
-import { MovingObject } from "../animations/MovingObject";
+import  FloatingElement from "../animations/FloatingElement";
+import  MovingObject  from "../animations/MovingObject";
 
 interface WarmOffice3DProps {
   scroll?: number;
   className?: string;
 }
-
 
 const WarmOffice3D: React.FC<WarmOffice3DProps> = ({ scroll = 0, className = "" }) => {
   const [perspective, setPerspective] = useState(1000);
