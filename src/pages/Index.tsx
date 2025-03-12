@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Square, SquareKanban } from "lucide-react";
+import { Square, SquareKanban, User } from "lucide-react";
 
 const Index = () => {
   return (
@@ -16,6 +16,12 @@ const Index = () => {
             <Link to="/kanban">
               <SquareKanban className="h-5 w-5" />
               Kanban Board
+            </Link>
+          </Button>
+          <Button asChild variant="outline" className="gap-2">
+            <Link to="/portfolio">
+              <User className="h-5 w-5" />
+              Portfolio
             </Link>
           </Button>
         </div>
