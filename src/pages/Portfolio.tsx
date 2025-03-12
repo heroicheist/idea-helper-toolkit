@@ -501,28 +501,28 @@ const Portfolio = () => {
             </ScrollReveal>
           </div>
         </section>
-        <section className="skills">
-        <h2 className="section-title">Skills</h2>
-      <div className="skills-categories">
-        {Object.keys(skillsData).map((category) => (
+        <section id="skills">
+      <h2>Skills</h2>
+
+      {/* Tabs Navigation */}
+      <div>
+        {skillsData.map((tab) => (
           <button
-            key={category}
-            className={`category-btn ${
-              activeCategory === category ? "active" : ""
-            }`}
-            onClick={() => setActiveCategory(category)}
+            key={tab.category}
+            onClick={() => setActiveTab(tab.category)}
           >
-            {category}
+            {tab.category}
           </button>
         ))}
       </div>
-      {/* Skills List */}
-      <div className="skills-list">
-        {skillsData[activeCategory].map((skill, index) => (
-          <div key={index} className="skill-item">
-            {skill}
-          </div>
-        ))}
+
+      {/* Skills Content */}
+      <div>
+        {skillsData
+          .find((tab) => tab.category === activeTab)
+          ?.skills.map((skill, index) => (
+            <div key={index}>{skill}</div>
+          ))}
       </div>
     </section>
       </main>
