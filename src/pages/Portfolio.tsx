@@ -154,12 +154,12 @@ const Portfolio = () => {
             <FloatingElement className="absolute top-[40%] right-[15%] text-orange-600/20 dark:text-orange-400/20" speed="slow">
               <Building className="h-32 w-32" />
             </FloatingElement>
-            <MovingObject direction="horizontal" className="absolute top-[30%] right-[10%] text-orange-600/20 dark:text-orange-400/20" speed="slow">
+            {/* <MovingObject direction="horizontal" className="absolute top-[30%] right-[10%] text-orange-600/20 dark:text-orange-400/20" speed="slow">
               <Code className="h-20 w-20" />
             </MovingObject>
             <MovingObject direction="vertical" className="absolute bottom-[20%] left-[5%] text-orange-600/20 dark:text-orange-400/20" speed="medium">
               <Rocket className="h-16 w-16" />
-            </MovingObject>
+            </MovingObject> */}
           </div>
           
           <div className="animate-fade-in max-w-4xl z-10 backdrop-blur-sm bg-white/30 dark:bg-black/20 p-8 rounded-xl border border-orange-200/30 dark:border-orange-700/30">
