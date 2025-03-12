@@ -29,27 +29,34 @@ const Portfolio = () => {
     projects: useRef<HTMLDivElement>(null),
     skills: useRef<HTMLDivElement>(null),
   };
-  const [activeCategory, setActiveCategory] = useState("Product Management");
+  const [activeTab, setActiveTab] = useState("Product Management");
 
-  const skillsData = {
-    "Product Management": [
-      "Product Strategy & Vision",
-      "Market Research & Competitor Analysis",
-      "Product Documentation",
-      "Roadmapping",
-      "Agile & Scrum Methodologies",
-      "Requirements Gathering & User Stories",
-      "Sprint Planning",
-      "Cross-functional Collaboration",
-      "Wireframing & Prototyping (Figma)",
-      "A/B Testing",
-    ],
-    "Technical Skills": [
-      "Data Visualization (Tableau)",
-      "Web Application Development (HTML, CSS, JavaScript, ReactJS, Node.js, Express.js, Figma)",
-      "ServiceNow (System Administration, ITSM, CSM, Scripting, Workflow, Scheduled Jobs)",
-    ],
-  };
+  const skillsData = [
+    {
+      category: "Product Management",
+      skills: [
+        "Product Strategy & Vision",
+        "Market Research & Competitor Analysis",
+        "Product Documentation",
+        "Roadmapping",
+        "Agile & Scrum Methodologies",
+        "Requirements Gathering & User Stories",
+        "Sprint Planning",
+        "Cross-functional Collaboration",
+        "Wireframing & Prototyping (Figma)",
+        "A/B Testing",
+      ],
+    },
+    {
+      category: "Technical Skills",
+      skills: [
+        "Data Visualization (Tableau)",
+        "Web Application Development (HTML, CSS, JavaScript, ReactJS, Node.js, Express.js, Figma)",
+        "ServiceNow (System Administration, ITSM, CSM, Scripting, Workflow, Scheduled Jobs)",
+      ],
+    },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
