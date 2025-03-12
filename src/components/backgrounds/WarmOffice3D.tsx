@@ -8,6 +8,7 @@ interface WarmOffice3DProps {
   className?: string;
 }
 
+
 const WarmOffice3D: React.FC<WarmOffice3DProps> = ({ scroll = 0, className = "" }) => {
   const [perspective, setPerspective] = useState(1000);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
