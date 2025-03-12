@@ -154,12 +154,12 @@ const Portfolio = () => {
             <FloatingElement className="absolute top-[40%] right-[15%] text-orange-600/20 dark:text-orange-400/20" speed="slow">
               <Building className="h-32 w-32" />
             </FloatingElement>
-            {/* <MovingObject direction="horizontal" className="absolute top-[30%] right-[10%] text-orange-600/20 dark:text-orange-400/20" speed="slow">
+            <MovingObject direction="horizontal" className="absolute top-[30%] right-[10%] text-orange-600/20 dark:text-orange-400/20" speed="slow">
               <Code className="h-20 w-20" />
             </MovingObject>
             <MovingObject direction="vertical" className="absolute bottom-[20%] left-[5%] text-orange-600/20 dark:text-orange-400/20" speed="medium">
               <Rocket className="h-16 w-16" />
-            </MovingObject> */}
+            </MovingObject>
           </div>
           
           <div className="animate-fade-in max-w-4xl z-10 backdrop-blur-sm bg-white/30 dark:bg-black/20 p-8 rounded-xl border border-orange-200/30 dark:border-orange-700/30">
@@ -223,17 +223,17 @@ const Portfolio = () => {
             </div>
           </div>
           
-          <ScrollReveal>
+          {/* <ScrollReveal>
             <div className="flex items-center gap-2 mb-10 relative z-10">
               <FloatingElement speed="medium">
                 <Briefcase className="h-7 w-7 text-orange-500 dark:text-orange-300" />
               </FloatingElement>
               <h2 className="text-2xl md:text-3xl font-bold text-orange-800 dark:text-orange-200">Experience</h2>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
           
           <div className="space-y-12 relative z-10">
-            <ScrollReveal>
+            {/* <ScrollReveal> */}
               <div className="grid md:grid-cols-[1fr_3fr] gap-6 md:gap-10 hover:scale-[1.01] transition-transform duration-300">
                 <div className="bg-orange-50 dark:bg-orange-900/30 p-6 rounded-lg shadow-sm relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-300/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
@@ -253,9 +253,9 @@ const Portfolio = () => {
                   </ul>
                 </div>
               </div>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
 
-            <ScrollReveal delay={200}>
+            {/* <ScrollReveal delay={200}>
               <div className="grid md:grid-cols-[1fr_3fr] gap-6 md:gap-10 hover:scale-[1.01] transition-transform duration-300">
                 <div className="bg-orange-50 dark:bg-orange-900/30 p-6 rounded-lg shadow-sm relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-300/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
@@ -274,9 +274,9 @@ const Portfolio = () => {
                   </ul>
                 </div>
               </div>
-            </ScrollReveal>
+            </ScrollReveal> */}
 
-            <ScrollReveal delay={400}>
+            {/* <ScrollReveal delay={400}> */}
               <div className="grid md:grid-cols-[1fr_3fr] gap-6 md:gap-10 hover:scale-[1.01] transition-transform duration-300">
                 <div className="bg-orange-50 dark:bg-orange-900/30 p-6 rounded-lg shadow-sm relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-300/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
@@ -293,7 +293,7 @@ const Portfolio = () => {
                   </ul>
                 </div>
               </div>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
           </div>
         </section>
 
@@ -314,17 +314,17 @@ const Portfolio = () => {
             </div>
           </div>
           
-          <ScrollReveal>
+          {/* <ScrollReveal>
             <div className="flex items-center gap-2 mb-10 relative z-10">
               <FloatingElement speed="medium">
                 <GraduationCap className="h-7 w-7 text-orange-500 dark:text-orange-300" />
               </FloatingElement>
               <h2 className="text-2xl md:text-3xl font-bold text-orange-800 dark:text-orange-200">Education</h2>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
           
           <div className="space-y-12 relative z-10">
-            <ScrollReveal>
+            {/* <ScrollReveal> */}
               <div className="grid md:grid-cols-[1fr_3fr] gap-6 md:gap-10 hover:scale-[1.01] transition-transform duration-300">
                 <div className="bg-orange-50 dark:bg-orange-900/30 p-6 rounded-lg shadow-sm relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-300/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
@@ -337,9 +337,9 @@ const Portfolio = () => {
                   <h4 className="text-lg font-medium mb-2 text-orange-700 dark:text-orange-300 relative z-10">Master of Science, Management Information Systems</h4>
                 </div>
               </div>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
 
-            <ScrollReveal delay={200}>
+            {/* <ScrollReveal delay={200}> */}
               <div className="grid md:grid-cols-[1fr_3fr] gap-6 md:gap-10 hover:scale-[1.01] transition-transform duration-300">
                 <div className="bg-orange-50 dark:bg-orange-900/30 p-6 rounded-lg shadow-sm relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-300/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
@@ -352,7 +352,7 @@ const Portfolio = () => {
                   <h4 className="text-lg font-medium mb-2 text-orange-700 dark:text-orange-300 relative z-10">Bachelor of Engineering, Mechanical Engineering</h4>
                 </div>
               </div>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
           </div>
         </section>
 
@@ -380,17 +380,17 @@ const Portfolio = () => {
             </div>
           </div>
           
-          <ScrollReveal>
+          {/* <ScrollReveal>
             <div className="flex items-center gap-2 mb-10 relative z-10">
               <FloatingElement speed="medium">
                 <Code className="h-7 w-7 text-orange-500 dark:text-orange-300" />
               </FloatingElement>
               <h2 className="text-2xl md:text-3xl font-bold text-orange-800 dark:text-orange-200">Projects</h2>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-            <ScrollReveal animation="fade-left">
+            {/* <ScrollReveal animation="fade-left"> */}
               <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
                 <CardContent className="p-6 relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
@@ -412,9 +412,9 @@ const Portfolio = () => {
                   </div>
                 </CardContent>
               </Card>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
             
-            <ScrollReveal animation="fade-right" delay={200}>
+            {/* <ScrollReveal animation="fade-right" delay={200}> */}
               <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
                 <CardContent className="p-6 relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
@@ -434,9 +434,9 @@ const Portfolio = () => {
                   </div>
                 </CardContent>
               </Card>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
             
-            <ScrollReveal animation="fade-left" delay={300}>
+            {/* <ScrollReveal animation="fade-left" delay={300}> */}
               <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
                 <CardContent className="p-6 relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
@@ -456,9 +456,9 @@ const Portfolio = () => {
                   </div>
                 </CardContent>
               </Card>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
             
-            <ScrollReveal animation="fade-right" delay={400}>
+            {/* <ScrollReveal animation="fade-right" delay={400}> */}
               <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
                 <CardContent className="p-6 relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
@@ -478,7 +478,7 @@ const Portfolio = () => {
                   </div>
                 </CardContent>
               </Card>
-            </ScrollReveal>
+            {/* </ScrollReveal> */}
           </div>
         </section>
       </main>
