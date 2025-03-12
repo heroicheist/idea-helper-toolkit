@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -407,4 +408,82 @@ const Portfolio = () => {
                     <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">Product Strategy</Badge>
                     <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">Figma</Badge>
                     <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">User Research</Badge>
-                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-20
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">UX Design</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-right" delay={200}>
+              <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
+                <CardContent className="p-6 relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
+                  <FloatingElement className="absolute -top-6 -right-6 text-orange-200 dark:text-orange-900 opacity-30" speed="slow">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-400/30 to-orange-600/20"></div>
+                  </FloatingElement>
+                  
+                  <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300 relative z-10">HR Automation System</h3>
+                  <p className="text-orange-700/80 dark:text-orange-300/80 mb-4 relative z-10">
+                    Led a cross-functional team to develop an HR automation system that streamlined employee onboarding, time-off requests, and performance reviews. Reduced manual processing time by 90%, saving 5 hours per week.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4 relative z-10">
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">React.js</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">Node.js</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">MongoDB</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">Agile</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-left" delay={300}>
+              <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
+                <CardContent className="p-6 relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
+                  <FloatingElement className="absolute -top-6 -right-6 text-orange-200 dark:text-orange-900 opacity-30" speed="slow">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-400/30 to-orange-600/20"></div>
+                  </FloatingElement>
+                  
+                  <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300 relative z-10">ServiceNow ITSM Implementation</h3>
+                  <p className="text-orange-700/80 dark:text-orange-300/80 mb-4 relative z-10">
+                    Managed ServiceNow ITSM implementation for a Fortune 500 client, configuring incident, problem, and change management modules. Optimized system response time by 25% and improved service reliability.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4 relative z-10">
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">ServiceNow</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">ITSM</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">JavaScript</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">Integration</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-right" delay={400}>
+              <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700 h-full">
+                <CardContent className="p-6 relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
+                  <FloatingElement className="absolute -top-6 -right-6 text-orange-200 dark:text-orange-900 opacity-30" speed="slow">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-400/30 to-orange-600/20"></div>
+                  </FloatingElement>
+                  
+                  <h3 className="text-xl font-semibold mb-3 text-orange-700 dark:text-orange-300 relative z-10">E-commerce Dashboard</h3>
+                  <p className="text-orange-700/80 dark:text-orange-300/80 mb-4 relative z-10">
+                    Built an interactive e-commerce analytics dashboard that visualized sales data, customer behavior, and inventory metrics. Improved decision-making and boosted user engagement by 20%.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4 relative z-10">
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">React.js</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">Redux</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">D3.js</Badge>
+                    <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700">REST API</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default Portfolio;
