@@ -5,18 +5,31 @@ import { cn } from "@/lib/utils";
 interface AnimatedGradientTextProps {
   children: React.ReactNode;
   className?: string;
+  fromColor?: string;
+  viaColor?: string;
+  toColor?: string;
+  animationDuration?: string;
 }
 
 export function AnimatedGradientText({
   children,
   className,
+  fromColor = "from-blue-600",
+  viaColor = "via-blue-400",
+  toColor = "to-blue-600",
+  animationDuration = "8s",
 }: AnimatedGradientTextProps) {
   return (
     <span
       className={cn(
-        "inline-block bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 bg-[length:200%_auto] animate-[gradient_8s_linear_infinite] bg-clip-text text-transparent",
+        "inline-block bg-gradient-to-r",
+        fromColor,
+        viaColor,
+        toColor,
+        "bg-[length:200%_auto] bg-clip-text text-transparent",
         className
       )}
+      style={{ animation: `gradient ${animationDuration} linear infinite` }}
     >
       {children}
     </span>
