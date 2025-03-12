@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,6 +50,12 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Warm color palette for 3D environment */
+    --warm-orange: 16 100% 70%;
+    --warm-yellow: 43 100% 70%; 
+    --warm-peach: 28 100% 86%;
+    --warm-red: 9 87% 62%;
   }
 
   .dark {
@@ -87,6 +94,12 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Warm color palette for 3D environment in dark mode */
+    --warm-orange: 16 80% 60%;
+    --warm-yellow: 43 80% 60%; 
+    --warm-peach: 28 70% 76%;
+    --warm-red: 9 77% 52%;
   }
 }
 
@@ -162,6 +175,42 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate-3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 200, 150, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 130, 70, 0.8);
+  }
+}
+
+@keyframes move-light {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
@@ -182,12 +231,58 @@
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate-3d {
+  animation: rotate-3d 20s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-move-light {
+  animation: move-light 5s linear infinite;
+}
+
 .hover-scale {
   transition: transform 0.3s ease;
 }
 
 .hover-scale:hover {
   transform: scale(1.05);
+}
+
+.warm-gradient {
+  background: linear-gradient(135deg, hsl(var(--warm-orange)), hsl(var(--warm-yellow)));
+}
+
+.peach-gradient {
+  background: linear-gradient(135deg, hsl(var(--warm-peach)), hsl(var(--warm-red)));
+}
+
+.warm-glow {
+  filter: drop-shadow(0 0 8px rgba(255, 154, 85, 0.7));
+}
+
+/* 3D elements styling */
+.circle-light {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent);
+  position: absolute;
+  filter: blur(5px);
+}
+
+.ring-light {
+  border-radius: 50%;
+  border: 3px solid rgba(255, 220, 180, 0.4);
+  position: absolute;
+  filter: blur(1px);
+  box-shadow: 0 0 15px rgba(255, 170, 100, 0.7);
 }
 
 #root {

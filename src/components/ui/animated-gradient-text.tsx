@@ -29,7 +29,10 @@ export function AnimatedGradientText({
         "bg-[length:200%_auto] bg-clip-text text-transparent",
         className
       )}
-      style={{ animation: `gradient ${animationDuration} linear infinite` }}
+      style={{ 
+        animation: `gradient ${animationDuration} linear infinite`,
+        textShadow: "0 2px 10px rgba(255, 170, 100, 0.3)"
+      }}
     >
       {children}
     </span>
