@@ -58,36 +58,20 @@ const Portfolio = () => {
 
   const certificationData = [
     {
-      name: "ServiceNow Administrator",
-      issuer: "ServiceNow",
-      date: "May 2023",
-      credentialId: "SN-123456",
-      skills: ["ITSM", "CSM", "CMDB", "Service Portal"],
-      image: "servicenow-logo.png"
-    },
-    {
-      name: "Certified Scrum Master (CSM)",
+      name: "Certified Scrum Product Owner (CSPO)",
       issuer: "Scrum Alliance",
       date: "January 2023",
       credentialId: "SA-789101",
-      skills: ["Agile", "Scrum", "Sprint Planning", "Backlog Management"],
+      skills: ["Product Backlog", "Value Maximization", "Stakeholder Management", "Product Vision"],
       image: "scrum-logo.png"
     },
     {
-      name: "Product Management Certification",
-      issuer: "Product School",
+      name: "Certified ScrumMaster (CSM)",
+      issuer: "Scrum Alliance",
       date: "August 2022",
-      credentialId: "PS-112233",
-      skills: ["Product Strategy", "Market Analysis", "Roadmapping"],
-      image: "product-school-logo.png"
-    },
-    {
-      name: "AWS Certified Developer – Associate",
-      issuer: "Amazon Web Services",
-      date: "March 2022",
-      credentialId: "AWS-445566",
-      skills: ["Lambda", "S3", "DynamoDB", "API Gateway"],
-      image: "aws-logo.png"
+      credentialId: "SA-112233",
+      skills: ["Agile", "Scrum", "Sprint Planning", "Team Facilitation"],
+      image: "scrum-logo.png"
     }
   ];
 
