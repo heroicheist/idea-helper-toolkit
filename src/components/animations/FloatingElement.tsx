@@ -6,13 +6,15 @@ interface FloatingElementProps {
   children: React.ReactNode;
   delay?: string;
   speed?: 'slow' | 'medium' | 'fast';
+  style?: React.CSSProperties;
 }
 
 const FloatingElement: React.FC<FloatingElementProps> = ({ 
   className = "", 
   children, 
   delay = "0s",
-  speed = "medium"
+  speed = "medium",
+  style = {}
 }) => {
   const speedMap = {
     slow: "5s",
@@ -25,7 +27,8 @@ const FloatingElement: React.FC<FloatingElementProps> = ({
       className={`inline-block ${className}`} 
       style={{ 
         animation: `float ${speedMap[speed]} ease-in-out infinite`,
-        animationDelay: delay
+        animationDelay: delay,
+        ...style
       }}
     >
       {children}
