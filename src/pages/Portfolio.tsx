@@ -1,10 +1,9 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
   ExternalLink, ArrowLeft, Linkedin, Mail, Github, ArrowRight, 
   Sparkles, Star, Briefcase, GraduationCap, Code, Rocket, 
-  Building, Cpu, Database, Monitor 
+  Building, Cpu, Database, Monitor, Award
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,6 +26,7 @@ const Portfolio = () => {
     education: useRef<HTMLDivElement>(null),
     projects: useRef<HTMLDivElement>(null),
     skills: useRef<HTMLDivElement>(null),
+    certifications: useRef<HTMLDivElement>(null),
   };
   const [activeTab, setActiveTab] = useState("Product Management");
 
@@ -54,6 +54,41 @@ const Portfolio = () => {
         "ServiceNow (System Administration, ITSM, CSM, Scripting, Workflow, Scheduled Jobs)",
       ],
     },
+  ];
+
+  const certificationData = [
+    {
+      name: "ServiceNow Administrator",
+      issuer: "ServiceNow",
+      date: "May 2023",
+      credentialId: "SN-123456",
+      skills: ["ITSM", "CSM", "CMDB", "Service Portal"],
+      image: "servicenow-logo.png"
+    },
+    {
+      name: "Certified Scrum Master (CSM)",
+      issuer: "Scrum Alliance",
+      date: "January 2023",
+      credentialId: "SA-789101",
+      skills: ["Agile", "Scrum", "Sprint Planning", "Backlog Management"],
+      image: "scrum-logo.png"
+    },
+    {
+      name: "Product Management Certification",
+      issuer: "Product School",
+      date: "August 2022",
+      credentialId: "PS-112233",
+      skills: ["Product Strategy", "Market Analysis", "Roadmapping"],
+      image: "product-school-logo.png"
+    },
+    {
+      name: "AWS Certified Developer – Associate",
+      issuer: "Amazon Web Services",
+      date: "March 2022",
+      credentialId: "AWS-445566",
+      skills: ["Lambda", "S3", "DynamoDB", "API Gateway"],
+      image: "aws-logo.png"
+    }
   ];
 
   useEffect(() => {
@@ -98,7 +133,6 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-red-950 text-foreground overflow-hidden relative">
-      {/* 3D Background */}
       <WarmOffice3D scroll={scrollProgress} className="z-0" />
 
       <nav className="fixed top-0 w-full bg-orange-50/80 dark:bg-orange-950/80 backdrop-blur-md z-50 border-b border-orange-200 dark:border-orange-800 shadow-sm">
@@ -517,7 +551,7 @@ const Portfolio = () => {
                   className={`px-4 py-2 rounded-lg font-medium transition-all ${
                     activeTab === category.category
                       ? "bg-orange-500 text-white shadow-md transform scale-105"
-                      : "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800/60"
+                      : "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-700"
                   }`}
                 >
                   {category.category}
@@ -544,6 +578,77 @@ const Portfolio = () => {
                   ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section ref={sectionRefs.certifications} className="py-16 min-h-screen flex flex-col justify-center relative">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 to-orange-100/10 dark:from-orange-900/20 dark:to-orange-800/5">
+                {/* Decorative elements for background */}
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <div 
+                    key={`cert-decoration-${i}`}
+                    className="absolute rounded-full bg-orange-300/10 dark:bg-orange-600/10"
+                    style={{ 
+                      width: `${60 + i * 20}px`, 
+                      height: `${60 + i * 20}px`, 
+                      top: `${10 + i * 15}%`, 
+                      left: `${5 + i * 18}%`,
+                      transform: `rotate(${i * 45}deg)`
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <ScrollReveal>
+            <div className="flex items-center gap-2 mb-10 relative z-10">
+              <FloatingElement speed="medium">
+                <Award className="h-7 w-7 text-orange-500 dark:text-orange-300" />
+              </FloatingElement>
+              <h2 className="text-2xl md:text-3xl font-bold text-orange-800 dark:text-orange-200">Certifications</h2>
+            </div>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+            {certificationData.map((cert, index) => (
+              <ScrollReveal key={index} delay={index * 100} animation={index % 2 === 0 ? "fade-right" : "fade-left"}>
+                <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-white to-orange-50 dark:from-orange-900/50 dark:to-orange-800/30 border-orange-100 dark:border-orange-700">
+                  <CardContent className="p-6 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-300/10 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500"></div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-full bg-orange-100 dark:bg-orange-800/50 p-3 flex-shrink-0">
+                        <Award className="h-6 w-6 text-orange-600 dark:text-orange-300" />
+                      </div>
+                      
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold mb-1 text-orange-700 dark:text-orange-300">{cert.name}</h3>
+                        <p className="text-orange-600/80 dark:text-orange-400/80 text-sm mb-2">
+                          {cert.issuer} • {cert.date}
+                        </p>
+                        <p className="text-orange-600/70 dark:text-orange-400/70 text-sm mb-3">
+                          Credential ID: {cert.credentialId}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {cert.skills.map((skill, idx) => (
+                            <Badge 
+                              key={idx} 
+                              className="bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200 hover:bg-orange-200 dark:hover:bg-orange-700"
+                            >
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
           </div>
         </section>
       </main>
