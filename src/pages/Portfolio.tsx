@@ -19,7 +19,6 @@ import WarmOffice3D from "@/components/backgrounds/WarmOffice3D";
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState<string>("about");
   const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const [elevatorPosition, setElevatorPosition] = useState<number>(0);
   const { toast } = useToast();
   
   const sectionRefs = {
@@ -64,14 +63,6 @@ const Portfolio = () => {
       const scrollPercent = scrollTop / docHeight;
       setScrollProgress(scrollPercent);
       
-      const aboutSectionHeight = sectionRefs.about.current?.offsetHeight || 0;
-      const experienceSectionTop = sectionRefs.experience.current?.offsetTop || 0;
-      
-      if (scrollTop >= aboutSectionHeight && scrollTop <= experienceSectionTop) {
-        const elevatorProgress = (scrollTop - aboutSectionHeight) / (experienceSectionTop - aboutSectionHeight);
-        setElevatorPosition(elevatorProgress);
-      }
-      
       const scrollPosition = window.scrollY + 100;
       
       for (const section in sectionRefs) {
@@ -109,34 +100,6 @@ const Portfolio = () => {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-red-950 text-foreground overflow-hidden relative">
       {/* 3D Background */}
       <WarmOffice3D scroll={scrollProgress} className="z-0" />
-      
-      <div 
-        className="fixed left-0 top-0 w-full h-screen pointer-events-none z-10"
-        style={{
-          opacity: elevatorPosition > 0 ? 1 : 0,
-          transition: "opacity 0.5s ease"
-        }}
-      >
-        <div className="absolute left-1/2 top-0 w-[40%] h-full -translate-x-1/2 bg-gradient-to-b from-orange-800/30 to-orange-800/5 backdrop-blur-sm rounded-lg overflow-hidden">
-          <div className="absolute left-0 top-0 w-2 h-full bg-orange-400/20"></div>
-          <div className="absolute right-0 top-0 w-2 h-full bg-orange-400/20"></div>
-          
-          {Array.from({ length: 10 }).map((_, i) => (
-            <div 
-              key={i}
-              className="absolute left-1 w-[calc(100%-2px)] h-[1px] bg-orange-400/30"
-              style={{ top: `${i * 10}%` }}
-            />
-          ))}
-          
-          <div 
-            className="absolute left-1/2 -translate-x-1/2 w-[90%] h-[30%] bg-orange-800/20 border border-orange-400/20 rounded-lg flex items-center justify-center transition-all duration-1000 ease-in-out animate-glow"
-            style={{ top: `${elevatorPosition * 70}%` }}
-          >
-            <Briefcase className="h-16 w-16 text-orange-400/70" />
-          </div>
-        </div>
-      </div>
 
       <nav className="fixed top-0 w-full bg-orange-50/80 dark:bg-orange-950/80 backdrop-blur-md z-50 border-b border-orange-200 dark:border-orange-800 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -508,30 +471,81 @@ const Portfolio = () => {
             </ScrollReveal>
           </div>
         </section>
-        <section id="skills">
-      <h2>Skills</h2>
-
-      {/* Tabs Navigation */}
-      <div>
-        {skillsData.map((tab) => (
-          <button
-            key={tab.category}
-            onClick={() => setActiveTab(tab.category)}
-          >
-            {tab.category}
-          </button>
-        ))}
-      </div>
-
-      {/* Skills Content */}
-      <div>
-        {skillsData
-          .find((tab) => tab.category === activeTab)
-          ?.skills.map((skill, index) => (
-            <div key={index}>{skill}</div>
-          ))}
-      </div>
-    </section>
+        
+        <section ref={sectionRefs.skills} className="py-16 min-h-screen flex flex-col justify-center relative">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 to-orange-100/10 dark:from-orange-900/20 dark:to-orange-800/5">
+                {/* Circuit-like pattern for background */}
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div 
+                    key={`h-line-${i}`}
+                    className="absolute h-[1px] w-full bg-orange-300/20 dark:bg-orange-700/20"
+                    style={{ top: `${(i + 1) * 15}%` }}
+                  >
+                    <div className="absolute right-[10%] w-3 h-3 rounded-full bg-orange-400/20 dark:bg-orange-600/20"></div>
+                  </div>
+                ))}
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div 
+                    key={`v-line-${i}`}
+                    className="absolute w-[1px] h-full bg-orange-300/20 dark:bg-orange-700/20"
+                    style={{ left: `${(i + 1) * 15}%` }}
+                  >
+                    <div className="absolute top-[40%] w-3 h-3 rounded-full bg-orange-400/20 dark:bg-orange-600/20"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <ScrollReveal>
+            <div className="flex items-center gap-2 mb-10 relative z-10">
+              <FloatingElement speed="medium">
+                <Cpu className="h-7 w-7 text-orange-500 dark:text-orange-300" />
+              </FloatingElement>
+              <h2 className="text-2xl md:text-3xl font-bold text-orange-800 dark:text-orange-200">Skills</h2>
+            </div>
+          </ScrollReveal>
+          
+          <div className="relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
+              {skillsData.map((category) => (
+                <button
+                  key={category.category}
+                  onClick={() => setActiveTab(category.category)}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                    activeTab === category.category
+                      ? "bg-orange-500 text-white shadow-md transform scale-105"
+                      : "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800/60"
+                  }`}
+                >
+                  {category.category}
+                </button>
+              ))}
+            </div>
+            
+            <div className="bg-white/60 dark:bg-orange-900/30 rounded-xl p-6 backdrop-blur-sm border border-orange-200/30 dark:border-orange-700/30">
+              <h3 className="text-xl font-semibold mb-6 text-orange-700 dark:text-orange-300">
+                {activeTab}
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {skillsData
+                  .find((tab) => tab.category === activeTab)
+                  ?.skills.map((skill, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-center gap-2 p-3 rounded-lg bg-orange-50 dark:bg-orange-900/40 border border-orange-100 dark:border-orange-800 group hover:bg-orange-100 dark:hover:bg-orange-800/50 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-400 dark:bg-orange-500 group-hover:scale-125 transition-transform"></div>
+                      <span className="text-orange-700 dark:text-orange-300">{skill}</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
